@@ -9,4 +9,4 @@ the program has two functions:
 2> Change_and_Resize: This changes all images to JPG and resizes to a tuple named "new_size" with two integer of 412.
 
 # How To Use
-run "run.bat" file. press 1 for do Change_ToJPG function and press 2 for Change_and_Resize function
+To use the program, run the "run.bat" file. Press 1 to execute the Change_ToJPG function, or press 2 to execute the Change_and_Resize function.
