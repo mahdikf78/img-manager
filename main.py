@@ -7,12 +7,10 @@ import random
 os.system('color')
 
 #give all images in directory in a LIST
-formats = ['PNG','WEBP','JPEG','JFIF','AVIF']
-all_imgs = glob.glob(f'*.{formats[0]}')
-all_imgs.extend(glob.glob(f'*.{formats[1]}'))
-all_imgs.extend(glob.glob(f'*.{formats[2]}'))
-all_imgs.extend(glob.glob(f'*.{formats[3]}'))
-all_imgs.extend(glob.glob(f'*.{formats[4]}'))
+formats = ['JPG','PNG','WEBP','JPEG','JFIF','AVIF']
+all_imgs = []
+for i in formats:
+    all_imgs.extend(glob.glob(f'*.{i}'))
 
 print('')
 
