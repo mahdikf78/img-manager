@@ -7,10 +7,12 @@ import random
 os.system('color')
 
 #give all images in directory in a LIST
-all_imgs = glob.glob('*.jpg')
-all_imgs.extend(glob.glob('*.jpeg'))
-all_imgs.extend(glob.glob('*.png'))
-all_imgs.extend(glob.glob('*.webp'))
+formats = ['PNG','WEBP','JPEG','JFIF','AVIF']
+all_imgs = glob.glob(f'*.{formats[0]}')
+all_imgs.extend(glob.glob(f'*.{formats[1]}'))
+all_imgs.extend(glob.glob(f'*.{formats[2]}'))
+all_imgs.extend(glob.glob(f'*.{formats[3]}'))
+all_imgs.extend(glob.glob(f'*.{formats[4]}'))
 
 print('')
 
@@ -20,7 +22,7 @@ def Change_ToJPG():
     for i in all_imgs :
         img = Image.open(i)
         print(all_imgs.index(i),':', i, '>>>>>')
-        if img.format in ['PNG','WEBP'] :
+        if img.format in formats :
             img.convert('RGB').save("img"+str(all_imgs.index(i))+str(random.randrange(5555))+".jpg", quality=100)
             send2trash.send2trash(i)
             print('\033[32m======== Images Changed to JPG ========\033[0m')
